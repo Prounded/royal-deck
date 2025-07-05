@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Deck</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="webLogo.png">
+</head>
+<body>
+    <div class="eventSlotDiv">
+        <div class="eventContainer cards" data-event="fire" data-level="1">
+            <img src="fireCard_lvl1.png" class="currentEventImage cardSide">
+            <img src="fireCard_lvl3.png" class="nextEventImage cardSide">
+        </div>
+        <div class="eventContainer cards" data-event="conflict" data-level="1">
+            <img src="conflictCard_lvl1.png" class="currentEventImage cardSide">
+            <img src="conflictCard_lvl3.png" class="nextEventImage cardSide">
+        </div>
+        <div class="eventContainer cards" data-event="economy" data-level="1">
+            <img src="economyCard_lvl1.png" class="currentEventImage cardSide">
+            <img src="economyCard_lvl3.png" class="nextEventImage cardSide">
+        </div>
+        <div class="eventContainer cards" data-event="corruption" data-level="1">
+            <img src="leaderLossCard_lvl1.png" class="currentEventImage cardSide">
+            <img src="leaderLossCard_lvl3.png" class="nextEventImage cardSide">
+        </div>
+        <div class="eventContainer cards" data-event="war" data-level="1">
+            <img src="warCard_lvl1.png" class="currentEventImage cardSide">
+            <img src="warCard_lvl3.png" class="nextEventImage cardSide">
+        </div>
+    </div>
+
+    <div class="cardDeckDiv">
+        <img src="coverCard.png" class="drawDeckDiv">
+        <div class="eventChance"></div>
+    </div>
+
+    <div class="leftDataDiv">
+        <div class="winningCrown">
+            <div class="crownDiv cards" data-value="blank">
+                <img src="blankCardImage.png" class="cardSide front">
+                <img src="crownImage.png" class="cardSide back">
+            </div>
+            <div class="crownDiv cards" data-value="blank">
+                <img src="blankCardImage.png" class="cardSide front">
+                <img src="crownImage.png" class="cardSide back">
+            </div>
+            <div class="crownDiv cards" data-value="blank">
+                <img src="blankCardImage.png" class="cardSide front">
+                <img src="crownImage.png" class="cardSide back">
+            </div>
+
+            <button class="buyCrownButton"></button>
+        </div>
+
+        <div class="UserCardSlots">
+            <div class="usableCardDiv">
+            </div>
+            <div class="cardSlotNumber">0/2</div>
+        </div>
+
+        <div class="userMoney" id="userMoney"></div>
+        <div class="moneyChanged" id="moneyChanged"></div>
+    </div>
+
+    <div class="boostDiv">
+        <div class="boostChoose">
+            <div class="boostImageCont">
+                <img src="luckyBoostImg.png" class="boostImg">
+            </div>
+            <div class="currentBoost">
+                <div class="boostDetail">
+                    <div class="boostTitle">Lucky</div>
+                    <div class="boostLevel" data-levelMax="10">Level 1 / 10</div>
+                </div>
+                <div class="boostBarLevel">
+                    <div class="currentBoostLevel"></div>
+                </div>
+            </div>
+            <button class="boostUpgradeButton" data-boost="lucky"></button>
+        </div>
+        <div class="boostChoose">
+            <div class="boostImageCont">
+                <img src="moneyEveryCardBoostImg.png" class="boostImg">
+            </div>
+            <div class="currentBoost">
+                <div class="boostDetail">
+                    <div class="boostTitle">Investment</div>
+                    <div class="boostLevel" data-levelMax="10">Level 1 / 10</div>
+                </div>
+                <div class="boostBarLevel">
+                    <div class="currentBoostLevel"></div>
+                </div>
+            </div>
+            <button class="boostUpgradeButton" data-boost="investment"></button>
+        </div>
+        <div class="boostChoose">
+            <div class="boostImageCont">
+                <img src="agreementImage.png" class="boostImg">
+            </div>
+            <div class="currentBoost">
+                <div class="boostDetail">
+                    <div class="boostTitle">Safeness</div>
+                    <div class="boostLevel" data-levelMax="10">Level 1 / 10</div>
+                </div>
+                <div class="boostBarLevel">
+                    <div class="currentBoostLevel"></div>
+                </div>
+            </div>
+            <button class="boostUpgradeButton" data-boost="safetyDeal"></button>
+        </div>
+        <div class="boostChoose">
+            <div class="boostImageCont">
+                <img src="crownPriceBoostImg.png" class="boostImg">
+            </div>
+            <div class="currentBoost">
+                <div class="boostDetail">
+                    <div class="boostTitle">Leadership</div>
+                    <div class="boostLevel" data-levelMax="10">Level 1 / 10</div>
+                </div>
+                <div class="boostBarLevel">
+                    <div class="currentBoostLevel"></div>
+                </div>
+            </div>
+            <button class="boostUpgradeButton" data-boost="leadership"></button>
+        </div>
+        <div class="boostChoose">
+            <div class="boostImageCont">
+                <img src="castleProtectionBoostImg.png" class="boostImg">
+            </div>
+            <div class="currentBoost">
+                <div class="boostDetail">
+                    <div class="boostTitle">Defence</div>
+                    <div class="boostLevel" data-levelMax="10">Level 1 / 10</div>
+                </div>
+                <div class="boostBarLevel">
+                    <div class="currentBoostLevel"></div>
+                </div>
+            </div>
+            <button class="boostUpgradeButton" data-boost="protection"></button>
+        </div>
+    </div>
+
+    <div class="revealCardDiv">
+        <div class="revealCard">
+            <img class="cardSide cardFront" src="coverCard.png"></img>
+            <img class="cardSide cardBack"></img>
+        </div>
+    </div>
+
+    <div class="latestCardDrawn">
+        <img src="warCard_lvl1.png" class="latestCardImg">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
